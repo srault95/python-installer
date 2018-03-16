@@ -2,22 +2,24 @@
 
 [![Docker Automated build](https://img.shields.io/docker/automated/srault95/python-installer.svg)](https://hub.docker.com/r/srault95/python-installer/) [![Docker Stars](https://img.shields.io/docker/stars/srault95/python-installer.svg)](https://hub.docker.com/r/srault95/python-installer)
 
-**Dockerize PyInstaller and Python 2.7 portable for create binaries projects.**
+**Dockerize PyInstaller and Python portable for create binaries projects.**
 
 > This project depends of https://github.com/srault95/python-binary
 
 ## Docker Build
 
 ```
-$ docker build -t srault95/python-installer .
+$ docker build -t srault95/python-installer:py27 -f Dockerfile .
+$ docker build -t srault95/python-installer:py35 -f Dockerfile_py35 .
+$ docker tag srault95/python-installer:py35 srault95/python-installer:latest
 ```
 
 ## Example for building python-fabric
 
 ```
-# see build-fabric.sh
+# see build-fabric-py2.sh
 
-$ docker run -it --rm -v $PWD:/app srault95/python-installer /app/build-fabric.sh
+$ docker run -it --rm -v $PWD:/app srault95/python-installer:py27 /app/build-fabric-py2.sh
 
 $ ./dist/fab --version
 
