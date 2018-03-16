@@ -8,7 +8,7 @@ TARGET_NAME=fab
 
 [ -e /app/requirements.txt ] && pip install -r /app/requirements.txt
 
-pip install fabric3
+pip install fabric
 
 pyinstaller --clean --distpath=${DIST_PATH} -y -F ${SOURCE_MAIN} --name=${TARGET_NAME}
 
