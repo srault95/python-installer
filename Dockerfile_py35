@@ -1,4 +1,4 @@
-FROM astj/centos5-vault
+FROM centos:6
 
 ENV LD_LIBRARY_PATH=/usr/local/python3.5/lib
 ENV PATH=/usr/local/python3.5/bin:$PATH
